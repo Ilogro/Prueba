@@ -1,0 +1,13 @@
+function LeerTabla() {
+    Tabla = document.getElementsByTagName('table')[0].getElementsByTagName('tr')
+    str='[';
+	 for (i=3;i<Tabla.length;i++) {
+	 total = Tabla[i].children[1].textContent.replace(',','.');
+     C_agena  = Tabla[i].children[3].textContent.replace(',','.');
+     C_propia = Tabla[i].children[5].textContent.replace(',','.');
+     str += "[" + "'" + Tabla[i].children[0].textContent.replace("'"," ").replace("'"," ").replace("\n","") + " , " + C_agena + " , " + C_propia + "'" + " , " + total + "],"
+     str += "\n"
+	 }
+    str += "]]"
+    return str;
+ }
